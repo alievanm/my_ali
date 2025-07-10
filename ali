@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>وب‌سایت شخصی من</title>
+  <style>
+    /* Reset و تنظیمات پایه */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Vazir', sans-serif;
+    }
+    body {
+      background: #f0f2f5;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: #4a90e2;
+      color: white;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      font-weight: 700;
+      font-size: 1.5rem;
+      cursor: default;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #ffd54f;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      color: #4a90e2;
+    }
+
+    /* درباره من */
+    #about p {
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    /* کارها */
+    #works .work-item {
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #ddd;
+    }
+    #works .work-item:last-child {
+      border-bottom: none;
+    }
+    #works .work-item h3 {
+      color: #333;
+      margin-bottom: 0.3rem;
+    }
+    #works .work-item p {
+      color: #666;
+    }
+
+    /* بلاگ */
+    #blog .blog-post {
+      margin-bottom: 1rem;
+    }
+    #blog .blog-post h3 {
+      color: #333;
+      cursor: pointer;
+      user-select: none;
+    }
+    #blog .blog-post p {
+      color: #555;
+      margin-top: 0.5rem;
+      display: none;
+    }
+
+    /* فرم تماس */
+    #contact form {
+      display: flex;
+      flex-direction: column;
+    }
+    #contact label {
+      margin: 0.7rem 0 0.3rem;
+      font-weight: 600;
+      color: #444;
+    }
+    #contact input, #contact textarea {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+      resize: vertical;
+      transition: border-color 0.3s ease;
+    }
+    #contact input:focus, #contact textarea:focus {
+      border-color: #4a90e2;
+      outline: none;
+    }
+    #contact button {
+      margin-top: 1rem;
+      padding: 0.8rem;
+      border: none;
+      background: #4a90e2;
+      color: white;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    #contact button:hover {
+      background: #357ABD;
+    }
+
+    /* اعتبارسنجی */
+    .error {
+      color: #e74c3c;
+      font-size: 0.9rem;
+      margin-top: 0.2rem;
+      display: none;
+    }
+    .show-error {
+      display: block;
+    }
+
+    /* ریسپانسیو */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav a {
+        margin-left: 0;
+        margin-right: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>وب‌سایت شخصی من</h1>
+  <nav>
+    <a href="#about">درباره من</a>
+    <a href="#works">کارها</a>
+    <a href="#blog">بلاگ</a>
+    <a href="#contact">تماس با ما</a>
+  </nav>
+</header>
+
+<main>
+
+  <section id="about">
+    <h2>درباره من</h2>
+    <p>سلام! من یک توسعه‌دهنده وب هستم و این وب‌سایت برای به اشتراک گذاشتن کارهای روزمره و تجربیات من است.</p>
+  </section>
+
+  <section id="works">
+    <h2>کارهای من</h2>
+    <div class="work-item">
+      <h3>پروژه اول</h3>
+      <p>توضیح مختصر درباره پروژه اول</p>
+    </div>
+    <div class="work-item">
+      <h3>پروژه دوم</h3>
+      <p>توضیح مختصر درباره پروژه دوم</p>
+    </div>
+  </section>
+
+  <section id="blog">
+    <h2>بلاگ</h2>
+    <div class="blog-post">
+      <h3>عنوان پست اول</h3>
+      <p>متن پست اول ...</p>
+    </div>
+    <div class="blog-post">
+      <h3>عنوان پست دوم</h3>
+      <p>متن پست دوم ...</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>تماس با من</h2>
+    <form id="contactForm" novalidate>
+      <label for="name">نام شما:</label>
+      <input type="text" id="name" name="name" required />
+      <div class="error" id="nameError">لطفا نام خود را وارد کنید.</div>
+
+      <label for="email">ایمیل شما:</label>
+      <input type="email" id="email" name="email" required />
+      <div class="error" id="emailError">لطفا ایمیل معتبر وارد کنید.</div>
+
+      <label for="message">پیام شما:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+      <div class="error" id="messageError">لطفا پیام خود را وارد کنید.</div>
+
+      <button type="submit">ارسال پیام</button>
+    </form>
+  </section>
+
+</main>
+
+<script>
+  // باز/بسته کردن متن بلاگ
+  document.querySelectorAll("#blog .blog-post h3").forEach(title => {
+    title.addEventListener("click", () => {
+      const p = title.nextElementSibling;
+      if(p.style.display === "block") p.style.display = "none";
+      else p.style.display = "block";
+    });
+  });
+
+  // اعتبارسنجی فرم
+  const form = document.getElementById("contactForm");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    // پاک کردن خطاها
+    document.querySelectorAll(".error").forEach(el => el.classList.remove("show-error"));
+
+    let valid = true;
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const message = form.message.value.trim();
+
+    if(name === "") {
+      document.getElementById("nameError").classList.add("show-error");
+      valid = false;
+    }
+    if(email === "" || !email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+      document.getElementById("emailError").classList.add("show-error");
+      valid = false;
+    }
+    if(message === "") {
+      document.getElementById("messageError").classList.add("show-error");
+      valid = false;
+    }
+
+    if(valid) {
+      alert("پیام شما با موفقیت ارسال شد!");
+      form.reset();
+    }
+  });
+</script>
+
+</body>
+</html>
